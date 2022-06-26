@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Object 物件(一), 利用key-value概念來儲存資料</title>
+    </head>
+
+    <body>
+        <h1>學生列表</h1>
+        <table class="list">
+            <tr>
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Math Score</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbody">
+                </tbody>
+            </tr>
+        </table>
+
+        <script>
+            var students = [
+                {
+                    name: '大民',
+                    mathScore: 90
+                },
+                {
+                    name: '小華',
+                    mathScore: 100
+                },
+                {
+                    name: '阿美',
+                    mathScore: 85
+                },
+                {
+                    name: '小明',
+                    mathScore: 70
+                }
+            ];
+            var list = document.getElementById('tbody');
+
+            for (let i = 0; i < students.length; i++) {
+                var template = `
+                <tr>
+                    <td>${i}</td>
+                    <td>${students[i].name}</td>
+                    <td>${students[i].mathScore}</td>
+                </tr>
+                `
+
+                list.innerHTML += template
+                // li.innerHTML = students[i];
+                // list.append(li);
+            }
+
+        </script>  
+    </body>
+</html>

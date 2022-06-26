@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>建立簡易登入頁面, 及時提醒使用者格式輸入錯誤</title>
+    </head>
+
+    <body>
+        <form>
+            <label>
+                E-mail    
+                <input type="email" id="user_email">
+            </label>
+
+            <label>
+                Password
+                <input type="password" id="user_password">
+                <br><p style="color:red" id="password_warning"></p>
+            </label>
+
+            <button id="submit" type="submit">登入</button>
+        </form>
+
+        <script>
+            var signIn = {
+                isEmailFormatCorrect: false,
+                isPasswordFormatCorrect: false,
+                init: function() {
+                    var emailInput = document.querySelector('#user_email')
+                    var passwordInput = document.querySelector('#user_password')
+
+                    emailInput.addEventListener('input', (e) => {
+                        // console.log(e.target.value)
+                        signIn.isEmailFormatCorrect = true;
+                        canSubmit();
+                    })
+                    
+                    passwordInput.addEventListener('input', (e) => {
+                        var value = e.target.value;
+                        var password_warning = document.querySelector('#password_warning');
+                        if (value.length >= 6) {
+                            password_warning.innerText = '';
+                            signIn.isPasswordFormatCorrect = true
+                        }
+                        else {
+                            password_warning.innerText = 'password format not correct';
+                            signIn.isPasswordFormatCorrect = false
+                        }
+
+                        canSubmit();
+                    })
+
+                    function canSubmit() {
+                        var submit = document.querySelector('#submit');
+                        if (isEmailFormatCorrect && isPasswordFormatCorrect) {
+                            submit.disabled = false;
+                        }
+                        else {
+                            submit.disabled = true;
+                        }
+                    }
+                }
+            }
+
+            signIn.init();
+        </script>
+    </body>
+</html>

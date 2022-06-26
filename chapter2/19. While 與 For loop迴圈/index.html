@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>While 與 For loop迴圈</title>
+    </head>
+
+    <body>
+        <h1>學生列表</h1>
+        <ul id="list">
+
+        </ul>
+
+        <script>
+            var students = ['大民', '小華', '阿美', '小明'];
+            var list = document.getElementById('list');
+
+            for (let i = 0; i < students.length; i++) {
+                var li = document.createElement('li');
+                li.innerHTML = students[i];
+                list.append(li);
+            }
+
+        </script>  
+    </body>
+</html>

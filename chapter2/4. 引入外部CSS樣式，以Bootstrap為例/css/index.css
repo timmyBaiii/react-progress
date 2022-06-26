@@ -1,0 +1,11 @@
+#content h1 {
+    font-size: 12px;
+}
+
+.text-blue {
+    color: blue;
+}
+
+.big-text {
+    font-size: 3em;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>建立簡易登入頁面, 及時提醒使用者格式輸入錯誤</title>
+        <script src="./js//account.js"></script>
+    </head>
+
+    <body>
+        <h1>Sign up</h1>
+        <form>
+            <label>
+                User Id    
+                <input type="text" id="user_id">
+            </label><br />
+
+            <label>
+                E-mail    
+                <input type="email" id="user_email">
+            </label><br />
+
+            <label>
+                Password
+                <input type="password" id="user_password">
+                <p style="color:red" id="password_warning"></p>
+            </label><br />
+
+            <label>
+                Password Confirmation
+                <input type="password" id="user_password_confirmation">
+                <p style="color:red" id="user_password_confirmation_warning"></p>
+            </label><br />
+
+            <button id="submit" type="submit">登入</button>
+        </form>
+        <br />
+        <a href="index.html">Log in</a>
+
+        <script>
+            var sigUp = account;
+            sigUp.init();
+        </script>
+    </body>
+</html>

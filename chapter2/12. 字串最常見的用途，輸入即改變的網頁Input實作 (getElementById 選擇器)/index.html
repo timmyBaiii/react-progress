@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>字串最常見的用途，輸入即改變的網頁Input實作 (getElementById 選擇器)</title>
+    </head>
+
+    <body>
+        <h1 id="title">這是首頁標題</h1>
+        <input type="text" id="text_input" value="" />
+        
+        <script>
+            var price = 50;
+            var Id = 'title';
+            var inputId = 'text_input'
+            var title = document.getElementById(Id);
+            var inputId = document.getElementById(inputId);
+
+            inputId.addEventListener('input', () => {
+                var value = inputId.value;
+                title.innerHTML = '總價: ' + price * value;
+            });
+
+            var value = inputId.value;
+            title.innerHTML = '總價: ' + price * value;
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>完成基本的BMI頁面 影片滿版開啟影片獨立分頁</title>
+    </head>
+
+    <body>
+        <label>
+            身高(cm):
+            <input id="height" type="number" value="" min="0" max="300">
+        </label>
+        <br />
+        <label>
+            體重(kg):
+            <input id="weight" type="text" min="0" max="300">
+        </label>
+        
+        <button id="calculate" type="button" onclick="">計算</button>
+
+        <script>
+           
+            var height = document.getElementById('height');
+            var weight = document.getElementById('weight');
+            var btn = document.getElementById('calculate');
+
+            btn.addEventListener('click', () => {
+                var BMI = weight.value / (height.value / 100 * height.value / 100);
+                var min = 18.5;
+                var max = 24;
+                var result = '';
+
+                if (BMI > max) {
+                    result = '過重';
+                }
+                else if (BMI < min) {
+                    result = '過輕';
+                }
+                else {
+                    result = '正常';
+                }
+                
+                console.log(`BMI 值: ${BMI}, ${result}`);
+            })
+        </script>
+    </body>
+</html>
