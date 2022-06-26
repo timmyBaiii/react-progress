@@ -29,29 +29,49 @@
         <a href="sigup.html">Sign up</a>
         
         <script>
-            var signIn = account;
-            signIn.init();
-            
-            function Cart(prices) {
-                this.amount = function() {
-                    var result = 0;
-                    for (var index = 0; index < prices.length; index++) {
-                        result += prices[index];
-                    }
-                    
-                    return result;
-                }
-                this.showAmount = function() {
-                    var amount = this.amount();
-                    console.log(amount);
-                }
-            }
-            
-            var cart1 = new Cart([1, 2]);
-            var cart2 = new Cart([12, 5, 2]);
+            (function() {
+                console.log('init');
+            })()
 
-            cart1.showAmount();
-            cart2.showAmount();
+            var doSomethingPublic = (function() {
+                var _result = 0;
+                function _addCount() {
+                    _result += 1
+                }
+
+                return function doPrivate() {
+                    _addCount();
+                    console.log(_result);
+                }
+            })()
+
+            doSomethingPublic();
+            doSomethingPublic();
+            doSomethingPublic();
+        
+            // var signIn = account;
+            // signIn.init();
+            
+            // function Cart(prices) {
+            //     this.amount = function() {
+            //         var result = 0;
+            //         for (var index = 0; index < prices.length; index++) {
+            //             result += prices[index];
+            //         }
+                    
+            //         return result;
+            //     }
+            //     this.showAmount = function() {
+            //         var amount = this.amount();
+            //         console.log(amount);
+            //     }
+            // }
+            
+            // var cart1 = new Cart([1, 2]);
+            // var cart2 = new Cart([12, 5, 2]);
+
+            // cart1.showAmount();
+            // cart2.showAmount();
         </script>
     </body>
 </html>
