@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>製作ES5類似Class, 解決物件內部相依性問題2</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./js//account.js"></script>
+    </head>
+
+    <body>
+        <h1>Log in</h1>
+        <form>
+            <label>
+                E-mail    
+                <input type="email" id="user_email">
+            </label>
+
+            <label>
+                Password
+                <input type="password" id="user_password">
+                <br><p style="color:red" class="warning-string"></p>
+            </label>
+
+            <button id="submit" type="submit" disabled>登入</button>
+        </form>
+        <br />
+        <a href="sigup.html">Sign up</a>
+        
+        <script>
+            var signIn = account;
+            signIn.init();
+        </script>
+    </body>
+</html>
